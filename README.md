@@ -1,13 +1,14 @@
 # GreetMaster
 
-This bot was built during Discord
-Buildathon event, bot is responsible 
+This bot was built during the Discord
+Buildathon event, the bot is responsible 
 for keeping track of how many greets
 Good Morning/Good Night and Good Afternoon
 across all Discord servers.
 
-For this bot, I got special DiscordDev Buildathon role
-from Discord team in the Discord Dev server!
+For this bot, I got a special DiscordDev Buildathon role
+from the
+Discord team in the Discord Dev server!
 
 
 # Tech Stack 
@@ -36,3 +37,6 @@ MIT
 @jalpp
 This bot maintained by me but its free for 
 contributions.
+
+
+![Screen Shot 2023-11-02 at 12 07 09 PM](https://github.com/jalpp/GreetingMaster/assets/92553013/3fb94b82-0490-4bfd-9d86-a7130b9341ca)
