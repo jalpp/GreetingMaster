@@ -34,6 +34,8 @@ public class GreetLogic {
     public final static String night = "\uD83C\uDF19";
     public final static String af = "⛅";
     public final static String morn = "☀\uFE0F";
+    private static final String[] EMOJI_LEADERBOARD = { "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣", "9️⃣",
+            "\uD83D\uDD1F" };
 
 
     /**
@@ -103,7 +105,7 @@ public class GreetLogic {
                 .limit(10);
 
         StringBuilder leaderboardInfo = new StringBuilder();
-        int rank = 1;
+        int rank = 0;
 
         for (Document player : topPlayers) {
             String name = player.getString("name");
@@ -111,7 +113,7 @@ public class GreetLogic {
             int ga = player.getInteger(Greetings.GOOD_AFTERNOON.toString());
             int gm = player.getInteger(Greetings.GOOD_MORNING.toString());
 
-            String playerInfo = String.format("**Rank %d: %s" + GreetLogic.night + "Good Nights: %d," + GreetLogic.af + "Good Afternoons: %d," + GreetLogic.morn + "Good Mornings: %d** \n", rank, name, gn, ga, gm);
+            String playerInfo = String.format(" **%s %s " + " %s : %d " + " %s : %d " + " %s : %d**" + "\n\n", EMOJI_LEADERBOARD[rank], name, GreetLogic.night, gn, GreetLogic.af, ga, GreetLogic.morn, gm);
             leaderboardInfo.append(playerInfo);
             rank++;
         }
@@ -173,17 +175,12 @@ public class GreetLogic {
             String name = playerDocument.getString("name");
 
             // format and return
-            return String.format("**%s's Profile \n [" + GreetLogic.night +" Good Nights: %d \n " + GreetLogic.af + " Good Afternoons: %d \n" + GreetLogic.morn + " Good Mornings: %d ]** \n", name, gn, ga, gm);
+            return String.format("**" + GreetLogic.night +" Good Nights: %d \n " + GreetLogic.af + " Good Afternoons: %d \n" + GreetLogic.morn + " Good Mornings: %d ** \n", gn, ga, gm);
         } else {
 
             return "User not present! Can't generate proper Greetings profile!";
         }
     }
-
-
-
-
-
 
 
 

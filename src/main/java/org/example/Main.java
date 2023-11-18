@@ -15,12 +15,14 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
@@ -44,9 +46,7 @@ public class Main extends ListenerAdapter {
 
     public static void main(String[] args) {
 
-        Keystore.startAuth(); // get tokens
-
-        JDABuilder jdaBuilder = JDABuilder.createDefault(Keystore.Discord).enableIntents(GatewayIntent.MESSAGE_CONTENT, GatewayIntent.GUILD_MEMBERS);
+        JDABuilder jdaBuilder = JDABuilder.createDefault(Keystore.Discord).enableIntents(GatewayIntent.GUILD_MEMBERS);
         jdaBuilder.disableCache(CacheFlag.VOICE_STATE, CacheFlag.EMOJI, CacheFlag.STICKER, CacheFlag.SCHEDULED_EVENTS);
 
         jdaBuilder.setStatus(OnlineStatus.ONLINE);
@@ -174,14 +174,14 @@ public class Main extends ListenerAdapter {
               }
           }
 
-          case "top10" -> event.replyEmbeds(new EmbedBuilder().setDescription(logic.getTop10Players(collection)).setTitle("Top 10 Greet Masters").setColor(Color.YELLOW).build()).queue();
+          case "top10" -> event.replyEmbeds(new EmbedBuilder().setDescription("**Rank Username GN score GA score GM score**\n\n" + logic.getTop10Players(collection)).setTitle("Top 10 Greet Masters").setThumbnail("https://cdn-icons-png.flaticon.com/128/1426/1426727.png").setColor(Color.YELLOW).build()).addActionRow(Button.primary("count", "\uD83D\uDC64 Player Count: " + collection.countDocuments()).asDisabled()).addActionRow(Button.primary("help", "❓")).queue();
 
           case "greethelp" -> event.reply("**GreetingMaster Help Guide**" +
                   "\n" +
                   "**/greet** Greet good morning, night, and afternoon in any server within 1 day, max greeting per day are 3" +
                   "\n**/top10** View top 10 Greet Masters around the world (all discords)" +
                   "\n**/profile** View your greeting profile" +
-                  "\n**/greethelp** View GreetMaster bot commands").queue();
+                  "\n**/greethelp** View GreetMaster bot commands").setEphemeral(true).queue();
 
 
           case "profile" -> event.replyEmbeds(logic.castProfileDirectly(event, collection).build()).queue();
@@ -189,6 +189,16 @@ public class Main extends ListenerAdapter {
 
       }
 
+
+    }
+
+
+    @Override
+    public void onButtonInteraction(ButtonInteractionEvent event) {
+
+        if(event.getComponentId().equalsIgnoreCase("help")){
+            event.reply("**Greet Masters Leaderboard Guide** \n Players score greet points everyday by running **/greet** command, they can score max of 3 points per day (in the whole day). Leaderboard resets every year at Sep, 1st.").setEphemeral(true).queue();
+        }
 
     }
 }
