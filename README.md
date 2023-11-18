@@ -35,8 +35,9 @@ MIT
 # Authors
 
 @jalpp
-This bot maintained by me but its free for 
+This bot is maintained by me but it's free for 
 contributions.
 
 
-![Screen Shot 2023-11-02 at 12 07 09 PM](https://github.com/jalpp/GreetingMaster/assets/92553013/3fb94b82-0490-4bfd-9d86-a7130b9341ca)
+![Screen Shot 2023-11-18 at 1 02 38 PM](https://github.com/jalpp/GreetingMaster/assets/92553013/ad1d642e-3c06-450f-9724-7d54d26f7c76)
+
