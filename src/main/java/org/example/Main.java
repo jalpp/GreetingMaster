@@ -68,7 +68,7 @@ public class Main extends ListenerAdapter {
                 new OptionData(OptionType.STRING, "type", "choose greet type", true)
                         .addChoice("Good Morning", "gm")
                         .addChoice("Good Night", "gn")
-                        .addChoice("Good Afternoon", "gn")
+                        .addChoice("Good Afternoon", "ga")
                 ));
 
         commands.addCommands(Commands.slash("top10","View top 10 greet masters"));
@@ -126,7 +126,7 @@ public class Main extends ListenerAdapter {
                               event.reply(event.getUser().getName() + " said " + Greetings.GOOD_MORNING.getProperName() + GreetLogic.morn + " and has entered the greeting race!" + Greetings.GOOD_MORNING.enduserMsgConverter() + " greet master count updated!").queue();
                           }
                       }else{
-                          event.reply("You said" + Greetings.GOOD_MORNING.getProperName() + "already! try other greetings or just take some rest!").queue();
+                          event.reply("You said " + Greetings.GOOD_MORNING.getProperName() + " already! try other greetings or just take some rest!").queue();
                       }
                   }
 
@@ -140,13 +140,13 @@ public class Main extends ListenerAdapter {
                                       .append("name", event.getUser().getName())
                                       .append(Greetings.GOOD_MORNING.toString(), 0)
                                       .append(Greetings.GOOD_NIGHT.toString(), 0)
-                                      .append(Greetings.GOOD_NIGHT.toString(), 1)
+                                      .append(Greetings.GOOD_AFTERNOON.toString(), 1)
                                       ;
                               collection.insertOne(doc);
                               event.reply(event.getUser().getName() + " said " + Greetings.GOOD_AFTERNOON.getProperName() + " " + GreetLogic.af +" and has entered the greeting race!" + " " + Greetings.GOOD_AFTERNOON.enduserMsgConverter() + " greet master count updated!").queue();
                           }
                       }else{
-                          event.reply("You said" + Greetings.GOOD_AFTERNOON.getProperName() + " already! try other greetings or just take some rest!").queue();
+                          event.reply("You said " + Greetings.GOOD_AFTERNOON.getProperName() + " already! try other greetings or just take some rest!").queue();
                       }
 
                   }
