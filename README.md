@@ -6,10 +6,7 @@ for keeping track of how many greets
 Good Morning/Good Night and Good Afternoon
 across all Discord servers.
 
-For this bot, I got a special DiscordDev Buildathon role
-from the
-Discord team in the Discord Dev server!
-
+This bot won Nov/Dec Discord Devs Buildathon and was featured among 250K users server. 
 
 # Tech Stack 
 
@@ -25,7 +22,7 @@ GreetMaster runs fully on Azure Cloud
 
 - /greet greet the world!
 - /top10 view top10 Greet masters
-- /profile view your own greet profile
+- /profile view your greet profile
 - /greethelp view helpful info
 
 
@@ -35,9 +32,12 @@ MIT
 # Authors
 
 @jalpp
-This bot is maintained by me but it's free for 
+I maintain this bot but it's free for 
 contributions.
 
+# Demo
+![Screen Shot 2023-12-06 at 11 32 29 AM](https://github.com/jalpp/GreetingMaster/assets/92553013/011f9413-ed18-4f34-834f-2b56436399c0)
 
-![Screen Shot 2023-11-18 at 1 02 38 PM](https://github.com/jalpp/GreetingMaster/assets/92553013/ad1d642e-3c06-450f-9724-7d54d26f7c76)
+
+
 
