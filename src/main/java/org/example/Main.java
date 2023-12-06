@@ -51,7 +51,7 @@ public class Main extends ListenerAdapter {
 
         jdaBuilder.setStatus(OnlineStatus.ONLINE);
 
-        jdaBuilder.setActivity(Activity.playing("good morning!"));
+        jdaBuilder.setActivity(Activity.playing("/greethelp"));
 
         jdaBuilder.addEventListeners(new Main());
 
@@ -114,7 +114,7 @@ public class Main extends ListenerAdapter {
                       if(!gmspam.checkSpam(event)){
                           if(logic.userPresentNormalGreet(collection, event.getUser().getId())){
                               logic.updatePlayer(event.getUser().getId(), 1, Greetings.GOOD_MORNING.toString(), collection);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_MORNING.getProperName() + "! " + GreetLogic.morn + " " + Greetings.GOOD_MORNING.enduserMsgConverter() + " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_MORNING.getProperName() + "! " + GreetLogic.morn + " " + Greetings.GOOD_MORNING.enduserMsgConverter() + " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }else{
                               Document doc = new Document("Discordid", event.getUser().getId())
                                       .append("name", event.getUser().getName())
@@ -123,10 +123,10 @@ public class Main extends ListenerAdapter {
                                       .append(Greetings.GOOD_AFTERNOON.toString(), 0)
                                       ;
                               collection.insertOne(doc);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_MORNING.getProperName() + GreetLogic.morn + " and has entered the greeting race!" + Greetings.GOOD_MORNING.enduserMsgConverter() + " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_MORNING.getProperName() + GreetLogic.morn + " and has entered the greeting race!" + Greetings.GOOD_MORNING.enduserMsgConverter() + " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }
                       }else{
-                          event.reply("You said " + Greetings.GOOD_MORNING.getProperName() + " already! try other greetings or just take some rest!").queue();
+                          event.reply("You said " + Greetings.GOOD_MORNING.getProperName() + " already! try other greetings or just take some rest!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                       }
                   }
 
@@ -134,7 +134,7 @@ public class Main extends ListenerAdapter {
                       if(!gaspam.checkSpam(event)){
                           if(logic.userPresentNormalGreet(collection, event.getUser().getId())){
                               logic.updatePlayer(event.getUser().getId(), 1, Greetings.GOOD_AFTERNOON.toString(), collection);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_AFTERNOON.getProperName() + " " + GreetLogic.af + " " + Greetings.GOOD_AFTERNOON.enduserMsgConverter() +  " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_AFTERNOON.getProperName() + " " + GreetLogic.af + " " + Greetings.GOOD_AFTERNOON.enduserMsgConverter() +  " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }else{
                               Document doc = new Document("Discordid", event.getUser().getId())
                                       .append("name", event.getUser().getName())
@@ -143,10 +143,10 @@ public class Main extends ListenerAdapter {
                                       .append(Greetings.GOOD_AFTERNOON.toString(), 1)
                                       ;
                               collection.insertOne(doc);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_AFTERNOON.getProperName() + " " + GreetLogic.af +" and has entered the greeting race!" + " " + Greetings.GOOD_AFTERNOON.enduserMsgConverter() + " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_AFTERNOON.getProperName() + " " + GreetLogic.af +" and has entered the greeting race!" + " " + Greetings.GOOD_AFTERNOON.enduserMsgConverter() + " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }
                       }else{
-                          event.reply("You said " + Greetings.GOOD_AFTERNOON.getProperName() + " already! try other greetings or just take some rest!").queue();
+                          event.reply("You said " + Greetings.GOOD_AFTERNOON.getProperName() + " already! try other greetings or just take some rest!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                       }
 
                   }
@@ -155,7 +155,7 @@ public class Main extends ListenerAdapter {
                       if(!gnspam.checkSpam(event)){
                           if(logic.userPresentNormalGreet(collection, event.getUser().getId())){
                               logic.updatePlayer(event.getUser().getId(), 1, Greetings.GOOD_NIGHT.toString(), collection);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_NIGHT.getProperName() + " " + GreetLogic.night + " " + Greetings.GOOD_NIGHT.enduserMsgConverter() + " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_NIGHT.getProperName() + " " + GreetLogic.night + " " + Greetings.GOOD_NIGHT.enduserMsgConverter() + " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }else{
                               Document doc = new Document("Discordid", event.getUser().getId())
                                       .append("name", event.getUser().getName())
@@ -164,24 +164,24 @@ public class Main extends ListenerAdapter {
                                       .append(Greetings.GOOD_AFTERNOON.toString(), 0)
                                       ;
                               collection.insertOne(doc);
-                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_NIGHT.getProperName() + " " + GreetLogic.night + " and has entered the greeting race! " + Greetings.GOOD_NIGHT.enduserMsgConverter() + " greet master count updated!").queue();
+                              event.reply(event.getUser().getName() + " said " + Greetings.GOOD_NIGHT.getProperName() + " " + GreetLogic.night + " and has entered the greeting race! " + Greetings.GOOD_NIGHT.enduserMsgConverter() + " greet master count updated!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                           }
                       }else{
-                          event.reply("You said " + Greetings.GOOD_NIGHT.getProperName() + " already! try other greetings or just take some rest!").queue();
+                          event.reply("You said " + Greetings.GOOD_NIGHT.getProperName() + " already! try other greetings or just take some rest!").addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
                       }
 
                   }
               }
           }
 
-          case "top10" -> event.replyEmbeds(new EmbedBuilder().setDescription("**Rank Username GN score GA score GM score**\n\n" + logic.getTop10Players(collection)).setTitle("Top 10 Greet Masters").setThumbnail("https://cdn-icons-png.flaticon.com/128/1426/1426727.png").setColor(Color.YELLOW).build()).addActionRow(Button.primary("count", "\uD83D\uDC64 Player Count: " + collection.countDocuments()).asDisabled()).addActionRow(Button.primary("help", "❓")).queue();
+          case "top10" -> event.replyEmbeds(new EmbedBuilder().setDescription("**Rank Username GN score GA score GM score**\n\n" + logic.getTop10Players(collection)).setTitle("Top 10 Greet Masters").setThumbnail("https://cdn-icons-png.flaticon.com/128/1426/1426727.png").setColor(Color.YELLOW).build()).addActionRow(Button.primary("count", "\uD83D\uDC64 Player Count: " + collection.countDocuments()).asDisabled()).addActionRow(Button.primary("help", "❓"), Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Join")).queue();
 
           case "greethelp" -> event.reply("**GreetingMaster Help Guide**" +
                   "\n" +
                   "**/greet** Greet good morning, night, and afternoon in any server within 1 day, max greeting per day are 3" +
                   "\n**/top10** View top 10 Greet Masters around the world (all discords)" +
                   "\n**/profile** View your greeting profile" +
-                  "\n**/greethelp** View GreetMaster bot commands").setEphemeral(true).queue();
+                  "\n**/greethelp** View GreetMaster bot commands").setEphemeral(true).addActionRow(Button.link("https://discord.com/api/oauth2/authorize?client_id=1148622566714523689&permissions=277025409024&scope=bot", "Invite")).queue();
 
 
           case "profile" -> event.replyEmbeds(logic.castProfileDirectly(event, collection).build()).queue();
