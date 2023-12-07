@@ -46,6 +46,8 @@ public class Main extends ListenerAdapter {
 
     public static void main(String[] args) {
 
+        Keystore.startAuth();
+        
         JDABuilder jdaBuilder = JDABuilder.createDefault(Keystore.Discord).enableIntents(GatewayIntent.GUILD_MEMBERS);
         jdaBuilder.disableCache(CacheFlag.VOICE_STATE, CacheFlag.EMOJI, CacheFlag.STICKER, CacheFlag.SCHEDULED_EVENTS);
 
